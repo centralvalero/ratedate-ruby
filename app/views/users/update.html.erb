@@ -1,2 +1,18 @@
-<h1>Users#update</h1>
-<p>Find me in app/views/users/update.html.erb</p>
+<h1>Update</h1>
+<%= form_for(@user) do |f| %>
+	<%= render 'shared/error_messages' %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.label :password_confirmation, "Confirm Password" %>
+	<%= f.password_field :password_confirmation %>
+
+	<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+<% end %>
