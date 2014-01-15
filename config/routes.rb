@@ -1,7 +1,11 @@
 RatedateRuby::Application.routes.draw do
-  
 
   root 'static_pages#index'
+
+  get '/auth/new' => 'authentications#new'
+  get '/auth/:provider/callback' => 'authentications#create'
+  get "/auth/failure" => "authentications#failure" #OMNIAUTH
+  get "facebook/logout", :to => "authentications#logout", :as => :logout_authentication
 
   
   match '/terms', to: 'static_pages#terms', via: 'get'
