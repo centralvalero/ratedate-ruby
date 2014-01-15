@@ -9,4 +9,9 @@ RatedateRuby::Application.routes.draw do
 
   resources :users
 
+  #user signup, login, and logout
+  get "signup" => "users#new", :as => "signup"
+  #get "signin" => "sessions#new", :as => "signin"
+  #delete "signout" => "sessions#destroy", :as => "signout"
+
 end
