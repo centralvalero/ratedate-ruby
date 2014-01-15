@@ -1,5 +1,6 @@
 RatedateRuby::Application.routes.draw do
   
+
   root 'static_pages#index'
 
   
@@ -8,10 +9,11 @@ RatedateRuby::Application.routes.draw do
 
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   #user signup, login, and logout
   get "signup" => "users#new", :as => "signup"
-  #get "signin" => "sessions#new", :as => "signin"
-  #delete "signout" => "sessions#destroy", :as => "signout"
+  get "signin" => "sessions#new", :as => "signin"
+  delete "signout" => "sessions#destroy", :as => "signout"
 
 end
