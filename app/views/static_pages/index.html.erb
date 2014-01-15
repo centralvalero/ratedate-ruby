@@ -67,24 +67,3 @@
 	</section>
 	</div>
 <% end %>
-
-<!-- script for scrollspy -->
-<script type="text/javascript" >
-$('body').scrollspy({ target: '#myNavbar', offset:80 });
-
-var clicked = false;
-$('#mynav li a').click(
-function(){
-	$('#mycontent > div > h1').css('padding-top',0);
-	$($( this ).attr('href') + ' > h1').css('padding-top','50px');
-	clicked = true;
-	}
-);	
-
-$('body').on('activate.bs.scrollspy', function () {
-  console.log('scrolling...');
-  if(!clicked)$('#mycontent > div > h1').css('padding-top',0);
-  clicked = false;
-})
-</script>
-<!-- end script for scrollspy -->

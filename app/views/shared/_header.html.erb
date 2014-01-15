@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" id="myNavbar" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<% if signed_in? %>
 		<%= form_tag(users_path, :method => 'get', :class => "navbar-form navbar-left", :role => "search") do %>
 	        <%= text_field_tag :search, params[:search], :class => "input-small appendedInputButton", :placeholder => "Search" %>
@@ -10,11 +10,11 @@
 			<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
 		</ul>
 	<% else %>
-		<ul class="nav navbar-nav" id="mynav">
-		    <li><%= link_to "link1", root_path(anchor: "link1"), :class => "droppedHover"%></li>
-			<li><%= link_to "link2", root_path(anchor: "link2"), :class => ""%></li>
-			<li><%= link_to "link3", root_path(anchor: "link3"), :class => ""%></li>
-			<li><%= link_to "link4", root_path(anchor: "link4"), :class => ""%></li>
+		<ul class="nav navbar-nav">
+		    <li><%= link_to "link1", root_path(anchor: "link1")%></li>
+			<li><%= link_to "link2", root_path(anchor: "link2")%></li>
+			<li><%= link_to "link3", root_path(anchor: "link3")%></li>
+			<li><%= link_to "link4", root_path(anchor: "link4")%></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><%= link_to "Sign Up", signup_path %></li>
