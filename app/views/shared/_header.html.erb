@@ -1,12 +1,19 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" id="myNavbar" role="navigation">
-	<ul class="nav navbar-nav" id="mynav">
-	    <li><%= link_to "link1", root_path(anchor: "link1"), :class => "droppedHover"%></li>
-		<li><%= link_to "link2", root_path(anchor: "link2"), :class => ""%></li>
-		<li><%= link_to "link3", root_path(anchor: "link3"), :class => ""%></li>
-		<li><%= link_to "link4", root_path(anchor: "link4"), :class => ""%></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><%= link_to "Sign Up", signup_path %></li>
-		<li><%= link_to "Sign In", signin_path %></li>
-	</ul>
+	<% if signed_in? %>
+		<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to "Home", root_path %></li>
+			<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+		</ul>
+	<% else %>
+		<ul class="nav navbar-nav" id="mynav">
+		    <li><%= link_to "link1", root_path(anchor: "link1"), :class => "droppedHover"%></li>
+			<li><%= link_to "link2", root_path(anchor: "link2"), :class => ""%></li>
+			<li><%= link_to "link3", root_path(anchor: "link3"), :class => ""%></li>
+			<li><%= link_to "link4", root_path(anchor: "link4"), :class => ""%></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to "Sign Up", signup_path %></li>
+			<li><%= link_to "Sign In", signin_path %></li>
+		</ul>
+	<% end %>
 </nav>

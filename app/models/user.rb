@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   #password
   has_secure_password
   validates :password, length: { minimum: 8 }
+  validates :password_confirmation, presence: true
+  after_validation { self.errors.messages.delete(:password_digest) }
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
