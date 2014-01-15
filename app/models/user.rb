@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   after_validation { self.errors.messages.delete(:password_digest) }
 
+  #token for sessions
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
@@ -23,6 +24,11 @@ class User < ActiveRecord::Base
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+
+  #search
+    def self.search(query)
+        where("fname like ?", "%#{query}%")
+    end
 
   private
 
