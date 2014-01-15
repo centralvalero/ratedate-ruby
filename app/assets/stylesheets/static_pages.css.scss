@@ -5,6 +5,7 @@
 .sections-even {
 	min-height: 500px;
 	padding: 10px;
+  margin: 0 -10px;
 	background-color: grey;
 }
 .sections-even h1 {
@@ -13,13 +14,10 @@
 .sections-odd {
 	min-height: 500px;
 	padding: 10px;
+  margin: 0 -10px;
 	background-color: silver;
 }
-#top { 
-	padding-top: 80px;
-	padding-left:10px;
-	padding-right:10px;
-}
+#top
 .sections-even #img {
 	float:left;
 }
