@@ -1,2 +1,22 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Update</h1>
+<%= form_for(@user) do |f| %>
+	<%= render 'shared/error_message'%>
+
+	<p><%= f.label "First Name" %><br/>
+	<%= f.text_field :fname %></p>
+
+	<p><%= f.label "Last Name" %><br/>
+	<%= f.text_field :lname %></p>
+
+	<p><%= f.label :email %><br/>
+	<%= f.text_field :email %></p>
+
+	<p><%= f.label :password %><br/>
+	<%= f.password_field :password %></p>
+
+	<p><%= f.label :password_confirmation, "Confirm Password" %><br/>
+	<%= f.password_field :password_confirmation %></p>
+
+	<p><%= f.submit "Save changes", class: "btn btn-large btn-primary" %></p>
+<% end %>
+<p><%= button_to 'Delete My Account', user_path(current_user), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "btn btn-large" %></p>
