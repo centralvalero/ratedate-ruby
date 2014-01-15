@@ -1,24 +1,18 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<% if signed_in? %>
-		<%= form_tag(users_path, :method => 'get', :class => "navbar-form navbar-left", :role => "search") do %>
-	        <%= text_field_tag :search, params[:search], :class => "input-small appendedInputButton", :placeholder => "Search" %>
-	    <% end %>
-		<ul class="nav navbar-nav navbar-right">
-			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "#{current_user.fname} #{current_user.lname}", user_path(current_user) %></li>
-			<li><%= link_to "Account", edit_user_path(current_user) %></li>
-			<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-		</ul>
-	<% else %>
-		<ul class="nav navbar-nav">
-		    <li><%= link_to "link1", root_path(anchor: "link1")%></li>
-			<li><%= link_to "link2", root_path(anchor: "link2")%></li>
-			<li><%= link_to "link3", root_path(anchor: "link3")%></li>
-			<li><%= link_to "link4", root_path(anchor: "link4")%></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><%= link_to "Sign Up", signup_path %></li>
-			<li id="signupli"><%= link_to "Sign In", signin_path %></li>
-		</ul>
-	<% end %>
+	<div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <%= link_to "Rate Date", root_path, {:class => "navbar-brand"} %>
+    </div>
+    <!-- make available only on aboutus -->
+	<ul class="nav navbar-nav">
+	    <li><%= link_to "link1", aboutus_path(anchor: "link1")%></li>
+		<li><%= link_to "link2", aboutus_path(anchor: "link2")%></li>
+		<li><%= link_to "link3", aboutus_path(anchor: "link3")%></li>
+		<li><%= link_to "link4", aboutus_path(anchor: "link4")%></li>
+	</ul>
 </nav>
