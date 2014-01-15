@@ -28,5 +28,7 @@ end
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
+
+
 #for passwords
 gem 'bcrypt-ruby'
