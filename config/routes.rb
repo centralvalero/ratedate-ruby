@@ -1,7 +1,7 @@
 RatedateRuby::Application.routes.draw do
   
   root 'static_pages#index'
-  get 'static_pages/terms'
-  get 'static_pages/privacy'
+  match '/terms', to: 'static_pages#terms', via: 'get'
+  match '/privacy', to: 'static_pages#privacy', via: 'get'
 
 end
