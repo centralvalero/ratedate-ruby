@@ -24,10 +24,10 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-#facebook login
+#facebook and twitter login
 gem 'omniauth'
-gem 'omniauth-facebook', '1.4.0'
-#gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 
 
