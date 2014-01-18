@@ -9,7 +9,6 @@ RatedateRuby::Application.routes.draw do
   match '/aboutus', to: 'static_pages#aboutus', via: 'get'
 
 
-	
   get '/auth/:provider/callback'  => 'sessions#create'
   post '/signin'                  => 'sessions#new',        :as => :signin
   delete '/signout'               => 'sessions#destroy',    :as => :signout
