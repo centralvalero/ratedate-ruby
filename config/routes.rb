@@ -2,6 +2,7 @@ RatedateRuby::Application.routes.draw do
 
 
   root 'static_pages#index'
+  resources :sessions, only: [:create, :destroy]
 
   
   match '/terms', to: 'static_pages#terms', via: 'get'
@@ -11,6 +12,6 @@ RatedateRuby::Application.routes.draw do
 
   get '/auth/:provider/callback'  => 'sessions#create'
   post '/signin'                  => 'sessions#new',        :as => :signin
-  delete '/signout'               => 'sessions#destroy',    :as => :signout
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   get '/auth/failure'             => 'sessions#failure'
 end

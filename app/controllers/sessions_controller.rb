@@ -1,21 +1,13 @@
 class SessionsController < ApplicationController
   def create
-    @user = User.find_or_create_from_auth_hash(auth_hash)
-    self.current_user = @user
-    redirect_to '/'
+  	auth = request.env["omniauth.auth"]
+	user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.from_omniauth(auth)
+	session[:user_id] = user.id
+	redirect_to root_url, :notice => "Signed in!"
   end
  
   def destroy
-    reset_session
-    redirect_to root_url, :notice =&gt; 'Signed out!'
+	session[:user_id] = nil
+	redirect_to root_url, :notice => "Signed out!"
   end
- 
-  def failure
-    redirect_to root_url, :alert =&gt; "Authentication error: #{params[:message].humanize}"
-  end
-  protected
-
-	  def auth_hash
-	    request.env['omniauth.auth']
-	  end
 end

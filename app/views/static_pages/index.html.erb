@@ -3,17 +3,11 @@
 <div id="user-widget">
   <% if current_user %>
     Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <%= link_to "Sign out", signout_path, method: "delete" %>
   <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
-</div>
-<p>do not use yet, not set up</p>
-<div id="user_nav">
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Twitter", "https://api.twitter.com/oauth/authorize", provider: "twitter" %>
+  <ul>
+    <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+    <li><%= link_to "Sign in with Twitter", "/auth/twitter", provider: "twitter" %></li>
+    </ul>
   <% end %>
 </div>
