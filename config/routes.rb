@@ -1,8 +1,6 @@
 RatedateRuby::Application.routes.draw do
-  
 
-  get "sessions/create"
-  get "sessions/destroy"
+
   root 'static_pages#index'
 
   
