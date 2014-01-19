@@ -1,9 +1,5 @@
 class User < ActiveRecord::Base
 
-  def self.find_by_provider_and_uid(provider, uid)
-    where(provider: provider, uid: uid).first
-  end
-
   def self.from_omniauth(auth)
     create! do |user|
        user.provider = auth['provider']
