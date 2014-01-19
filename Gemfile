@@ -29,7 +29,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
-
+#devise for users
+gem 'devise'
 
 #for passwords
 gem 'bcrypt-ruby'
