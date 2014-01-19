@@ -28,6 +28,7 @@ end
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'devise'
 
 
 #for passwords
