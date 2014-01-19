@@ -1,13 +1,16 @@
 <h1>Index</h1>
 
 <div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, method: "delete" %>
-  <% else %>
-  <ul>
-    <li><%= link_to image_tag("facebook-login.png", alt: "Login with Facebook"), "/auth/facebook", provider: "facebook" %></li>
-    <li><%= link_to image_tag("twitter-login.png", alt: "Login with Twitter"), "/auth/twitter", provider: "twitter" %></li>
-    </ul>
-  <% end %>
+	<% if current_user %>
+		<p>Welcome <%= current_user.email %></p>
+		<p><%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %></p>
+		<p><%= link_to "Sign out", signout_path, method: "delete" %></p>
+	<% else %>
+		<p>You are not signed in.</p>
+		<ul>
+			<li><%= link_to 'Login with email', new_user_session_path %></li>
+			<li><%= link_to image_tag("facebook-login.png", alt: "Login with Facebook"), "/auth/facebook", provider: "facebook" %></li>
+			<li><%= link_to image_tag("twitter-login.png", alt: "Login with Twitter"), "/auth/twitter", provider: "twitter" %></li>
+		</ul>
+	<% end %>
 </div>

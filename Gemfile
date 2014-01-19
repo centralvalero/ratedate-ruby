@@ -31,6 +31,9 @@ gem 'omniauth-twitter'
 
 #devise for users
 gem 'devise'
+gem 'oa-oauth', :require => 'omniauth/oauth'
+gem 'uuidtools'
+gem 'cancan'
 
 #for passwords
 gem 'bcrypt-ruby'
