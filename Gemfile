@@ -29,11 +29,15 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
+<<<<<<< HEAD
 #devise for users
 gem 'devise'
 gem 'oa-oauth', :require => 'omniauth/oauth'
 gem 'uuidtools'
 gem 'cancan'
+=======
+
+>>>>>>> parent of 13ef3a5... removed sessions and user, now installing devise
 
 #for passwords
 gem 'bcrypt-ruby'

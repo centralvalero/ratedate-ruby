@@ -1,5 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+<<<<<<< HEAD
 # This model initially had no columns defined.  If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
@@ -9,3 +10,18 @@ one: {}
 #
 two: {}
 #  column: value
+=======
+one:
+  provider: MyString
+  uid: MyString
+  name: MyString
+  oauth_token: MyString
+  oauth_expires_at: 2014-01-15 15:57:22
+
+two:
+  provider: MyString
+  uid: MyString
+  name: MyString
+  oauth_token: MyString
+  oauth_expires_at: 2014-01-15 15:57:22
+>>>>>>> parent of 13ef3a5... removed sessions and user, now installing devise

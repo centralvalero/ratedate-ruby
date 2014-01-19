@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140119211925) do
 
   create_table "authorizations", force: true do |t|
@@ -21,11 +22,23 @@ ActiveRecord::Schema.define(version: 20140119211925) do
     t.string   "secret"
     t.string   "name"
     t.string   "link"
+=======
+ActiveRecord::Schema.define(version: 20140118074424) do
+
+  create_table "authentications", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "index"
+    t.string   "create"
+    t.string   "destroy"
+>>>>>>> parent of 13ef3a5... removed sessions and user, now installing devise
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
+<<<<<<< HEAD
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -43,5 +56,15 @@ ActiveRecord::Schema.define(version: 20140119211925) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+=======
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+>>>>>>> parent of 13ef3a5... removed sessions and user, now installing devise
 
 end
