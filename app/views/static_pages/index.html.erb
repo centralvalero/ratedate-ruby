@@ -1,15 +1,41 @@
 <h1>Index</h1>
 
 <div id="user-widget">
-  <% if user_signed_in? %>
-    <p>Welcome <strong><%= current_user.name %></strong>!</p>
-    <p><%= link_to "Sign out", signout_path, method: "delete" %></p>
+  <% if current_user %>
+    <p>Welcome <strong><%= current_user.email %></strong>!</p>
+    <p><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></p>
   
   <% else %>
 
   <ul>
     <li><%= link_to image_tag("facebook-login.png", alt: "Login with Facebook"), user_omniauth_authorize_path(:facebook) %></li>
     <li><%= link_to image_tag("twitter-login.png", alt: "Login with Twitter"), "/auth/twitter", provider: "twitter" %></li>
+    <li><%= link_to "Sign Up", new_user_registration_path %></li>
     </ul>
   <% end %>
 </div>
+
+<div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+          appId      : '333505546788462',                        // App ID from the app dashboard
+          channelUrl : 'http://localhost:3000/', // Channel file for x-domain comms
+          status     : true,                                 // Check Facebook Login status
+          xfbml      : true                                  // Look for social plugins on the page
+        });
+
+
+        // Additional initialization code such as adding Event Listeners goes here
+      };
+
+      // Load the SDK asynchronously
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
