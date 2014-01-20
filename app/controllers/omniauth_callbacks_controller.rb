@@ -11,4 +11,19 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
+  def passthru
+    send(params[:provider]) if providers.include?(params[:provider])
+  end
+
+  protected
+
+  def twitter
+    raise "Implement me for twitter"
+  end
+
+  private
+
+  def providers
+    ["facebook", "twitter"]
+  end
 end
