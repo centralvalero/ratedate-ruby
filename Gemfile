@@ -29,6 +29,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'devise'
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 
 #for passwords
