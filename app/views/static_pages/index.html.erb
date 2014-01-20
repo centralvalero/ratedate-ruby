@@ -1,12 +1,14 @@
 <h1>Index</h1>
 
 <div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, method: "delete" %>
+  <% if user_signed_in? %>
+    <p>Welcome <strong><%= current_user.name %></strong>!</p>
+    <p><%= link_to "Sign out", signout_path, method: "delete" %></p>
+  
   <% else %>
+
   <ul>
-    <li><%= link_to image_tag("facebook-login.png", alt: "Login with Facebook"), "/auth/facebook", provider: "facebook" %></li>
+    <li><%= link_to image_tag("facebook-login.png", alt: "Login with Facebook"), user_omniauth_authorize_path(:facebook) %></li>
     <li><%= link_to image_tag("twitter-login.png", alt: "Login with Twitter"), "/auth/twitter", provider: "twitter" %></li>
     </ul>
   <% end %>
