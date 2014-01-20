@@ -1,7 +1,8 @@
 RatedateRuby::Application.routes.draw do
 
 
-  root 'static_pages#index'
+	root 'static_pages#index'
+  
   	devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 devise_scope :user do

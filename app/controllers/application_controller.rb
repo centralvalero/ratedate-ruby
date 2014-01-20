@@ -4,7 +4,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
  
   helper :all # include all helpers, all the time
-protect_from_forgery
 include ActionView::Helpers::NumberHelper
-before_filter :authenticate_user!
 end
