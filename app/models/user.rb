@@ -4,13 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
  	def self.find_for_facebook_oauth(auth)
-	  where(auth.slice(:provider, :uid)).first_or_initialize do |user|
-	    user.provider = auth.provider
-	    user.uid = auth.uid
-	    user.email = auth.info.email
-	    user.password = Devise.friendly_token[0,20]
-	    user.name = auth.info.name   # assuming the user model has a name
-	  end
+		user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    	unless user
+    		user = User.create(name:auth.extra.raw_info.name, provider:auth.provider, uid:auth.uid, email:auth.info.email, password:Devise.friendly_token[0,20])
+    	end
+    	user
+  end
 	end
 
 	def self.find_for_twitter_oauth(auth)
