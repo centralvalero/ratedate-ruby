@@ -2,6 +2,7 @@
 
 <div id="user-widget">
   <% if current_user %>
+    <p><%= current_user.image %></p>
     <p>Welcome <strong><%= current_user.email %></strong>!</p>
     <p><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></p>
   
