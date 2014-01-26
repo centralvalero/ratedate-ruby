@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120152449) do
+ActiveRecord::Schema.define(version: 20140126232419) do
 
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140120152449) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

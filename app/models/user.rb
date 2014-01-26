@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
                            provider:auth.provider,
                            uid:auth.uid,
                            email:auth.info.email,
-                           password:Devise.friendly_token[0,20])
+                           password:Devise.friendly_token[0,20],
+                           image: auth.info.image)
     end
     user
 	end
@@ -24,14 +25,13 @@ class User < ActiveRecord::Base
 		  if registered_user
 		    return registered_user
 		  else
-
 		    user = User.create(name:auth.extra.raw_info.name,
 		                        provider:auth.provider,
 		                        uid:auth.uid,
 		                        email:auth.uid+"@twitter.com",
-		                        password:Devise.friendly_token[0,20],
+		                        password:Devise.friendly_token[0,20]
 		                      )
-		end
+		  end
 		end
 	end
 
