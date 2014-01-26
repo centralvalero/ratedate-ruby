@@ -28,6 +28,9 @@ end
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+
+gem 'twitter'
+gem 'fb_graph'
 gem 'devise'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
