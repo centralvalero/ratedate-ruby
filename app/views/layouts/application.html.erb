@@ -17,8 +17,10 @@
 		<%= yield %>
 	</div>
 </div>
-
+<% if current_user %>
+<% else %>
 <%= render 'shared/footer'%>
+<% end %>
 
 </body>
 </html>
