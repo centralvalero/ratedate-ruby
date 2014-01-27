@@ -4,5 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
  
   helper :all # include all helpers, all the time
-include ActionView::Helpers::NumberHelper
+  protected
+
+	def configure_permitted_parameters
+	    devise_parameter_sanitizer.for(:sign_up) << :name
+	end
 end

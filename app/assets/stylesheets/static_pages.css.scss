@@ -2,6 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@media (min-width: 768px) { 
+#login-module {
+  float: right;
+  width: 40%;
+}
+#socialmediasignin {
+  border: 1px solid black;
+  padding-left: 20px;
+  margin-top: 1em;
+  margin-right: 1em;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+#socialmediasignin p {
+  padding-left: 20px;
+}
+#emailsignin {
+  border: 1px solid black;
+  padding-left: 20px;
+  margin-top: 1em;
+  margin-right: 1em;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+#emailsignin p {
+  padding-left: 20px;
+}
+#welcome-module {
+  float: left;
+  width: 55%;
+  border: 1px solid black;
+  padding-left: 20px;
+  margin-top: 1em;
+  margin-left: 1em;
+  min-height: 440px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+#welcome-module p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+}
+@media (max-width: 767px) {
+  #welcome-module {
+    display: none;
+  }
+  #login-module {
+  float: none;
+  width: 100%;
+  }
+}
+
+
+
 .sections-even {
 	min-height: 500px;
 	padding: 10px;
