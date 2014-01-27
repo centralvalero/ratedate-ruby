@@ -33,7 +33,7 @@ gem 'twitter'
 gem 'fb_graph'
 gem 'devise'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
-gem 'protected_attributes'
+#gem 'protected_attributes'
 
 
 #for passwords
