@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126232419) do
+ActiveRecord::Schema.define(version: 20140127183719) do
 
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
