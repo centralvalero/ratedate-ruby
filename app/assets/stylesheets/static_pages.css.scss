@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* index page */
 @media (min-width: 768px) { 
 #login-module {
   float: right;
@@ -12,10 +13,10 @@
   padding-left: 20px;
   margin-top: 1em;
   margin-right: 1em;
-  -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border-radius: 10px; /* future proofing */
-  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -khtml-border-radius: 10px;
 }
 #socialmediasignin p {
   padding-left: 20px;
@@ -27,8 +28,8 @@
   margin-right: 1em;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border-radius: 10px; /* future proofing */
-  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+  border-radius: 10px;
+  -khtml-border-radius: 10px;
 }
 #emailsignin p {
   padding-left: 20px;
@@ -40,11 +41,12 @@
   padding-left: 20px;
   margin-top: 1em;
   margin-left: 1em;
-  min-height: 440px;
+  min-height: 442px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border-radius: 10px; /* future proofing */
-  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+  border-radius: 10px;
+  -khtml-border-radius: 10px;
+  padding-right: 10px;
 }
 #welcome-module p {
   padding-top: 10px;
@@ -61,8 +63,8 @@
   }
 }
 
-
-
+/* about us page */
+@media (min-width: 768px) { 
 .sections-even {
 	min-height: 500px;
 	padding: 10px;
@@ -145,3 +147,86 @@ figure:hover:before {
 .cap-bot:before { bottom: 10px; left: 10px; }
 .cap-bot figcaption { left: 0; bottom: -30%;}
 .cap-bot:hover figcaption { bottom: 0; }
+}
+@media (max-width: 767px) {
+.sections-even {
+  padding: 10px;
+  background-color: grey;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.sections-odd {
+  padding: 10px;
+  background-color: silver;
+  margin-left: -10px;
+  margin-right: -10px;
+
+}
+.sections-even #img {
+  float:left;
+}
+.sections-odd #img {
+  float:right;
+}
+#img {
+  padding-left:10px;
+  padding-right:10px;
+}
+figure { 
+  display: block; 
+  position: relative; 
+  float: left; 
+  overflow: hidden; 
+  margin: 0 20px 20px 0;
+}
+figcaption { 
+  position: absolute; 
+  background: rgba(0,0,0,0.75); 
+  color: white; 
+  padding: 10px 20px; 
+  opacity: 0;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition:    all 0.6s ease;
+  -o-transition:      all 0.6s ease;
+}
+figure:hover figcaption {
+  opacity: 1;
+}
+figure:before { 
+  content: "?"; 
+  position: absolute; 
+  font-weight: 800; 
+  background: rgba(255,255,255,0.75); 
+  text-shadow: 0 0 5px white;
+  color: black;
+  width: 24px;
+  height: 24px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius:    12px;
+  border-radius:         12px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  -moz-transition: all 0.6s ease;
+  opacity: 0.75;  
+}
+figure:hover:before {
+  opacity: 0;
+}
+
+.cap-left:before {  bottom: 10px; left: 10px; }
+.cap-left figcaption { bottom: 0; left: -30%; }
+.cap-left:hover figcaption { left: 0; }
+
+.cap-right:before { bottom: 10px; right: 10px; }
+.cap-right figcaption { bottom: 0; right: -30%; }
+.cap-right:hover figcaption { right: 0; }
+
+.cap-top:before { top: 10px; left: 10px; }
+.cap-top figcaption { left: 0; top: -30%; }
+.cap-top:hover figcaption { top: 0; }
+
+.cap-bot:before { bottom: 10px; left: 10px; }
+.cap-bot figcaption { left: 0; bottom: -30%;}
+.cap-bot:hover figcaption { bottom: 0; }
+}
