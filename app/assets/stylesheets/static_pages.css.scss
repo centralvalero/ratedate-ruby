@@ -154,19 +154,14 @@ figure:hover:before {
   background-color: grey;
   margin-left: -10px;
   margin-right: -10px;
+  float: none;
 }
 .sections-odd {
   padding: 10px;
   background-color: silver;
   margin-left: -10px;
   margin-right: -10px;
-
-}
-.sections-even #img {
-  float:left;
-}
-.sections-odd #img {
-  float:right;
+  float: none;
 }
 #img {
   padding-left:10px;
@@ -175,12 +170,10 @@ figure:hover:before {
 figure { 
   display: block; 
   position: relative; 
-  float: left; 
   overflow: hidden; 
   margin: 0 20px 20px 0;
 }
-figcaption { 
-  position: absolute; 
+figcaption {  
   background: rgba(0,0,0,0.75); 
   color: white; 
   padding: 10px 20px; 
